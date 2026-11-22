@@ -1,0 +1,16 @@
+import os
+
+TEXT = "You don't have to hold anything right now. The kettle is warm, the chair knows your shape, and the afternoon is doing its slow work without you. Somewhere a clock is ticking softly, not counting down — just keeping you company."
+
+
+def main():
+    # Write the single relaxing entry to the output directory.
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(out_dir, exist_ok=True)
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(TEXT)
+
+
+if __name__ == "__main__":
+    main()
